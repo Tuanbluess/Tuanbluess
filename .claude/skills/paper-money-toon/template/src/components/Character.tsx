@@ -9,9 +9,9 @@ export type Expr = 'neutral' | 'happy' | 'talk' | 'shock' | 'sad' | 'smug' | 'do
  * 1 kiểu tóc + 1 màu tóc + 1 phụ kiện mặt + 1 trang phục đặc trưng + 1 đồ vật hay cầm.
  */
 export type Look = {
-  hair?: 'silver' | 'bob' | 'short' | 'bald' | 'slick' | 'bun' | 'messy' | 'sidepart' | 'long' | 'curly' | 'spiky' | 'combover' | 'buzz' | 'receding' | 'ponytail';
+  hair?: 'silver' | 'swept' | 'bob' | 'short' | 'bald' | 'slick' | 'bun' | 'messy' | 'sidepart' | 'long' | 'curly' | 'spiky' | 'combover' | 'buzz' | 'receding' | 'ponytail';
   hairColor?: string;
-  glasses?: 'none' | 'round' | 'shades' | 'square' | 'rimless' | 'aviator';
+  glasses?: 'none' | 'narrow' | 'round' | 'shades' | 'square' | 'rimless' | 'aviator';
   beard?: 'none' | 'stubble' | 'full' | 'goatee' | 'mustache' | 'gray-stubble';
   beardColor?: string;
   outfit?: 'suit' | 'leather' | 'turtleneck' | 'hoodie' | 'tshirt' | 'dress' | 'vest' | 'blazer' | 'uniform';
@@ -32,7 +32,7 @@ export type Look = {
   holdingColor?: string;
 };
 
-const HAIR_DEFAULT: Record<string, string> = {silver: '#dcdce2'};
+const HAIR_DEFAULT: Record<string, string> = {silver: '#dcdce2', swept: '#d6d6d2'};
 
 export const Character: React.FC<{
   look: Look;
@@ -88,6 +88,17 @@ export const Character: React.FC<{
     switch (look.hair) {
       case 'silver':
         return <path d="M28 108 Q20 40 70 30 Q100 10 140 30 Q186 44 172 110 Q160 70 130 62 Q100 74 70 62 Q40 72 28 108Z" fill={f} stroke={C.ink} strokeWidth={3} />;
+      case 'swept':
+        // tóc bạc dày vuốt sang phải, có mái lệch + lọn tóc (kiểu "ông chủ áo da")
+        return (
+          <g>
+            <path d="M24 120 Q8 52 56 26 Q104 0 150 18 Q196 36 186 96 Q182 118 176 130 Q170 92 150 74 Q126 84 96 80 Q70 92 50 84 Q40 98 36 124Z" fill={f} stroke={C.ink} strokeWidth={3} />
+            <path d="M50 84 Q66 52 112 50 Q146 50 170 74 Q150 60 116 62 Q80 64 62 90Z" fill={shade(f.startsWith('#') ? f : '#d6d6d2')} opacity={0.5} />
+            <g stroke="rgba(60,60,70,0.45)" strokeWidth={2.5} fill="none" strokeLinecap="round">
+              <path d="M60 40 Q100 26 150 34" /><path d="M48 60 Q96 40 166 56" /><path d="M150 30 Q176 52 178 92" /><path d="M40 70 Q34 92 36 116" /><path d="M120 18 Q150 24 170 44" />
+            </g>
+          </g>
+        );
       case 'bob':
         return <path d="M22 150 Q10 40 100 28 Q190 40 178 150 L160 150 Q164 80 100 70 Q36 80 40 150Z" fill={f} />;
       case 'slick':
@@ -140,6 +151,9 @@ export const Character: React.FC<{
     switch (look.glasses) {
       case 'round':
         return <g fill="rgba(255,255,255,0.25)" stroke={C.ink} strokeWidth={3}><circle cx={74} cy={eyeY} r={17} /><circle cx={126} cy={eyeY} r={17} /><path d="M91 120 L109 120" /></g>;
+      case 'narrow':
+        // kính chữ nhật nhỏ, hẹp, đeo thấp trên sống mũi
+        return <g fill="rgba(255,255,255,0.18)" stroke={C.ink} strokeWidth={3}><rect x={58} y={118} width={32} height={13} rx={2} /><rect x={110} y={118} width={32} height={13} rx={2} /><path d="M90 123 Q100 119 110 123" fill="none" /><path d="M58 122 L36 116" /><path d="M142 122 L164 116" /></g>;
       case 'square':
         return <g fill="rgba(255,255,255,0.2)" stroke={C.ink} strokeWidth={4}><rect x={54} y={106} width={38} height={28} rx={4} /><rect x={108} y={106} width={38} height={28} rx={4} /><path d="M92 118 L108 118" /></g>;
       case 'rimless':
@@ -179,7 +193,25 @@ export const Character: React.FC<{
           <>
             <path d="M58 212 Q54 184 92 182 L100 250 L96 300 Q52 300 52 282Z" fill={oc} stroke={C.ink} strokeWidth={3} />
             <path d="M142 212 Q146 184 108 182 L100 250 L104 300 Q148 300 148 282Z" fill={oc} stroke={C.ink} strokeWidth={3} />
-            {outfit === 'leather' && <g stroke="#555" strokeWidth={2} fill="none"><path d="M92 186 L76 214 L92 226" /><path d="M108 186 L124 214 L108 226" /><path d="M120 236 L120 286" /><rect x={64} y={250} width={22} height={6} fill="#3a3a3a" /></g>}
+            {outfit === 'leather' && (
+              // áo khoác da biker: chi tiết dày hơn mặt -> là "chữ ký" nhận diện
+              <g>
+                <path d="M100 186 L100 300" stroke="#9a9aa0" strokeWidth={3} />
+                <path d="M100 190 L100 296" stroke="#cfcfd4" strokeWidth={1.5} strokeDasharray="2 3" />
+                <rect x={95} y={222} width={10} height={16} rx={2} fill="#d8d8dc" stroke={C.ink} strokeWidth={1.5} />
+                <path d="M70 184 L94 186 L84 212 L62 222 Q58 200 70 184Z" fill="#232326" stroke={C.ink} strokeWidth={2.5} />
+                <path d="M130 184 L106 186 L116 212 L138 222 Q142 200 130 184Z" fill="#232326" stroke={C.ink} strokeWidth={2.5} />
+                <circle cx={70} cy={214} r={2.5} fill="#bbb" /><circle cx={130} cy={214} r={2.5} fill="#bbb" />
+                <path d="M112 232 L136 252" stroke="#bfbfc4" strokeWidth={3} strokeLinecap="round" />
+                <path d="M62 262 L86 262" stroke="#bfbfc4" strokeWidth={3} strokeLinecap="round" />
+                <path d="M114 268 L138 268" stroke="#bfbfc4" strokeWidth={3} strokeLinecap="round" />
+                <path d="M58 212 Q72 200 88 204" stroke="#3a3a3e" strokeWidth={2} fill="none" />
+                <path d="M142 212 Q128 200 112 204" stroke="#3a3a3e" strokeWidth={2} fill="none" />
+                <rect x={54} y={284} width={92} height={12} rx={4} fill="#1a1a1d" stroke={C.ink} strokeWidth={2} />
+                <path d="M66 230 Q70 250 66 276" stroke="rgba(255,255,255,0.22)" strokeWidth={4} fill="none" strokeLinecap="round" />
+                <path d="M132 230 Q128 248 132 270" stroke="rgba(255,255,255,0.15)" strokeWidth={3} fill="none" strokeLinecap="round" />
+              </g>
+            )}
             {outfit === 'uniform' && <g fill="#e2c044">{[220, 244, 268].map((y) => <circle key={y} cx={112} cy={y} r={4} />)}</g>}
           </>
         )}
