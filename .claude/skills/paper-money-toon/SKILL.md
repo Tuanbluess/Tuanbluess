@@ -25,7 +25,7 @@ Làm theo `references/topic-and-packaging.md`:
 2. **Ngôn ngữ** (EN mặc định như đối thủ; VI, ES, PT, DE, JA, KO).
 3. **Thời lượng** như đối thủ: 12–15 phút hoặc 15–20 phút.
 4. **Tiêu đề**: 3 phương án theo công thức How/Why + tên lớn + yếu tố lạ.
-5. **Thumbnail**: 2–3 phương án (biếm họa mặt to + vật phát sáng + ≤ 4 chữ), render bằng `npm run still` để người dùng chọn.
+5. **Thumbnail**: 3 phương án theo `references/thumbnail-prompts.md` — viết prompt AI ảnh (tranh hoạt hình chi tiết, nhân vật mặt to cảm xúc cực đại, vật ẩn dụ phát sáng xanh, chừa 22% trên), rồi đặt chữ sans siêu đậm (số tiền đỏ có dấu âm + từ trắng) bằng `npm run still`.
 Dùng `AskUserQuestion` (gộp 1–4 câu mỗi lần). Có thể hỏi 0.2 + 0.3 cùng lúc với 0.1.
 
 ### Bước 1 — Nghiên cứu & dàn ý
@@ -55,7 +55,7 @@ Copy `template/` thành project (`npm i`). `npx remotion studio` để xem; comp
 - Giao: video, thumbnail đã chọn, tiêu đề, mô tả (tóm tắt + nguồn + chương mục), 10–15 tag.
 
 ## Phân tích đối thủ mới
-`bash scripts/analyze_reference.sh <file.mp4>` → số cảnh, nhịp/phút, % thẻ đen, mật độ SFX, contact sheet. Ảnh thumbnail đối thủ: xem ảnh và cập nhật `references/topic-and-packaging.md#05-thumbnail`.
+`bash scripts/analyze_reference.sh <file.mp4>` → số cảnh, nhịp/phút, % thẻ đen, mật độ SFX, contact sheet. Ảnh thumbnail đối thủ: xem ảnh và cập nhật `references/thumbnail-prompts.md`.
 
 ## Ghi chú môi trường
 - Render trong container cloud: thêm `--browser-executable=/opt/pw-browsers/chromium-1243/chrome-linux64/chrome` nếu Remotion không tự tải Chromium.

@@ -43,31 +43,30 @@ Kênh mẫu: 14:20 và 19:48. Cho chọn:
 
 ## 0.4 Công thức tiêu đề (học từ đối thủ)
 
-Tiêu đề quan sát được: *How a Chinese Spy Got Inside Nvidia* · *Why Nvidia Would Fail Without Jensen Huang*. (Mới thấy 2 tiêu đề — khi có thêm, cập nhật mục này.)
+4 tiêu đề thật của kênh mẫu (lượt xem / tuổi video):
+- *How a Chinese Spy Got Inside Nvidia* — 2,5 Tr / 3 ngày
+- *Why the Stock Market Just Crashed* — 1,1 Tr / 5 ngày
+- *Why Nvidia Would Fail Without Jensen Huang* — 1 Tr / 1 ngày
+- *The Biggest IPO in History Lost $80 Billion* — 171 N / 7 ngày
 
 Đặc điểm:
-- Bắt đầu bằng **How** hoặc **Why**; câu khẳng định, không dấu hỏi.
-- Chứa **1 tên lớn** (công ty hoặc người) — tên viết đúng, không viết tắt.
-- Có **1 yếu tố lạ/xung đột** ("Chinese Spy", "Would Fail") đặt cạnh cái tên quen.
-- 6–8 từ, chữ thường kiểu Title Case, **không** VIẾT HOA cả câu, không emoji, không số liệu.
+- Mở bằng **How / Why / The Biggest…**; câu khẳng định, không dấu hỏi, không emoji, Title Case.
+- Có **1 tên lớn hoặc sự kiện lớn** (Nvidia, Jensen Huang, Stock Market, IPO).
+- Có **xung đột/biến cố**: Spy, Crashed, Would Fail, Lost.
+- Số tiền **hoặc ở tiêu đề hoặc ở thumbnail**, hiếm khi cả hai giống hệt; 5–9 từ.
+- Chủ đề "tin vừa xảy ra" dùng *Just*: "Why the Stock Market Just Crashed".
 
 Khuôn mẫu:
 - `How a [nhân vật bất ngờ] Got Inside [Công ty]`
 - `Why [Công ty] Would Fail Without [Người]`
+- `Why [Thị trường/Công ty] Just [Crashed/Collapsed/Banned X]`
+- `The Biggest [Sự kiện] in History Lost $[Số]`
 - `How [Người] Lost [Thứ quý giá] in [Thời gian]`
-- `Why [Công ty] Is Quietly Paying [Đối thủ] Billions`
 - `How [Người] Turned [Thứ nhỏ] Into [Đế chế]`
-- `The [Tính từ] Reason [Công ty] [Hành động bất ngờ]`
-Viết 3 phương án cho chủ đề đã chọn, cho người dùng chọn. Tiếng Việt: giữ cấu trúc ("Vì sao Nvidia sẽ sụp đổ nếu thiếu Jensen Huang").
+Viết 3 phương án cho chủ đề đã chọn, cho người dùng chọn. Tiếng Việt giữ cấu trúc ("Vì sao Nvidia sẽ sụp đổ nếu thiếu Jensen Huang").
 
 ## 0.5 Thumbnail
 
-**Lưu ý trung thực:** thumbnail thật của kênh mẫu chưa được phân tích (chỉ có video). Công thức dưới đây suy ra từ phong cách trong video + chuẩn ngách; khi người dùng gửi ảnh thumbnail đối thủ (hoặc mạng cho phép YouTube), xem ảnh và cập nhật mục này.
-
-Công thức (đã có sẵn trong `template/src/Thumbnail.tsx`, sửa `storyboard/<ep>.thumb.json`):
-- Nhân vật chính **biếm họa, đầu to chiếm 40–50% khung**, biểu cảm cực mạnh (shock/smug/cry).
-- Nhân vật thứ 2 (đối thủ/kẻ phản diện) nhỏ hơn, biểu cảm trái ngược.
-- **1 vật ẩn dụ phát sáng** ở giữa (chip, $, ghế trống, ổ khóa, áo khoác).
-- **≤ 4 chữ** viết tay trắng viền đen, nói thứ tiêu đề **không** nói ("He had no idea", "$2 TRILLION GONE").
-- Nền tối tương phản cao, vignette, có thể thêm mũi tên đỏ.
-- Xuất 2–3 phương án để A/B test.
+Công thức chi tiết + prompt AI: **`references/thumbnail-prompts.md`** (phân tích từ 4 thumbnail thật).
+Tóm tắt: tranh hoạt hình chi tiết viền đen dày (AI ảnh) · 1 nhân vật biếm họa mặt to, cảm xúc cực đại · đang chạm vào 1 vật ẩn dụ phát sáng xanh neon · dải chữ trên cùng phông sans siêu đậm in hoa, **số tiền màu đỏ có dấu âm** + 0–2 từ trắng · nền bối cảnh truyện tối, bokeh/lửa.
+Xuất 3 phương án để người dùng chọn / A-B test.

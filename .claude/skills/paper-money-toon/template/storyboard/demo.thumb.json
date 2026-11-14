@@ -1,8 +1,8 @@
 {
-  "set": "night_city",
-  "hero": {"look": {"hair": "silver", "glasses": "square", "outfit": "leather", "shirtColor": "#111", "wrinkles": true}, "expr": "shock"},
-  "second": {"look": {"hair": "bob", "glasses": "shades", "outfit": "dress", "outfitColor": "#C8102E"}, "expr": "smug"},
-  "object": "$",
-  "text": "He had no idea",
-  "arrow": true
+  "_note": "Có ảnh AI: đặt file vào public/ rồi thêm \"image\": \"thumb_a.png\" — khi đó chỉ headline được vẽ lên ảnh. Không có ảnh: dùng bản vector bên dưới để xem bố cục.",
+  "set": "fancy_dinner",
+  "headline": [{"text": "ONE ZIPPER.", "color": "white"}, {"text": "-$2 TRILLION", "color": "red"}],
+  "hero": {"look": {"hair": "swept", "glasses": "narrow", "outfit": "leather", "outfitColor": "#141416", "shirtColor": "#141416", "wrinkles": true, "skin": "#F1CF9A"}, "expr": "sweat", "x": 0.33, "scale": 1.05},
+  "object": "⚡",
+  "objectColor": "#5CFF3B"
 }
