@@ -1,0 +1,15 @@
+{
+  "_note": "Biếm họa theo dấu hiệu công khai (tóc, kính, áo, đồ hay cầm). Copy vào storyboard.cast rồi chỉnh. Thêm người mới theo references/caricature-guide.md.",
+  "jensen_huang":   {"hair": "silver", "glasses": "square", "outfit": "leather", "shirtColor": "#111", "wrinkles": true, "holding": "chip"},
+  "elon_musk":      {"hair": "sidepart", "hairColor": "#3b2c22", "outfit": "tshirt", "outfitColor": "#111", "logo": "X", "holding": "rocket", "headScale": 1.05},
+  "mark_zuckerberg":{"hair": "curly", "hairColor": "#6b4a2e", "outfit": "tshirt", "outfitColor": "#8a8f98", "skin": "#F6D7BD"},
+  "sam_altman":     {"hair": "messy", "hairColor": "#5a4030", "outfit": "hoodie", "outfitColor": "#7b8088", "eyeBags": true},
+  "warren_buffett": {"hair": "combover", "hairColor": "#f2f2f2", "glasses": "square", "outfit": "suit", "outfitColor": "#2b2f3a", "tie": "#8a1c2b", "wrinkles": true, "holding": "burger"},
+  "donald_trump":   {"hair": "combover", "hairColor": "#f2c14e", "outfit": "suit", "outfitColor": "#1c2a4a", "tie": "#d0101e", "skin": "#F3B57A", "headScale": 1.08},
+  "tim_cook":       {"hair": "buzz", "hairColor": "#9a9aa0", "glasses": "rimless", "outfit": "turtleneck", "outfitColor": "#1a1a1a"},
+  "jeff_bezos":     {"hair": "bald", "glasses": "aviator", "outfit": "vest", "outfitColor": "#2a2a2a", "shirtColor": "#d8e4f0", "holding": "briefcase"},
+  "lisa_su":        {"hair": "bob", "hairColor": "#1a1416", "outfit": "blazer", "outfitColor": "#b0122a", "shirtColor": "#111", "earrings": true},
+  "generic_spy":    {"hair": "bob", "glasses": "shades", "outfit": "dress", "outfitColor": "#C8102E"},
+  "generic_banker": {"hair": "slick", "outfit": "suit", "tie": "#5CFF3B"},
+  "generic_agent":  {"hair": "buzz", "glasses": "shades", "outfit": "suit", "outfitColor": "#111", "tie": "#111"}
+}

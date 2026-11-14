@@ -1,0 +1,8 @@
+{
+  "set": "night_city",
+  "hero": {"look": {"hair": "silver", "glasses": "square", "outfit": "leather", "shirtColor": "#111", "wrinkles": true}, "expr": "shock"},
+  "second": {"look": {"hair": "bob", "glasses": "shades", "outfit": "dress", "outfitColor": "#C8102E"}, "expr": "smug"},
+  "object": "$",
+  "text": "He had no idea",
+  "arrow": true
+}

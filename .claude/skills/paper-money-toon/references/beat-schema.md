@@ -40,3 +40,17 @@
 - `expr`: `neutral` | `happy` | `talk` | `shock` | `sad` | `smug` | `doubt`.
 - Mọi `x`,`y` là tỉ lệ 0–1 của khung.
 - Mỗi shot `scene` nên có ≥ 1 `sfx` ở `at: 0`.
+
+## Trường chuyển động (xem `motion-library.md`)
+| Trường | Ví dụ |
+|---|---|
+| `transition` | `"whip"` — cut, whip, zoomIn, zoomOut, flash, slideUp, slideLeft, iris, glitch, spin, drop |
+| `actors[].exprs` | `[{"at": 1.1, "expr": "shock", "talking": false}]` |
+| `actors[].path` | `[{"at": 1.4, "x": 0.7, "y": 0.9}]` — đi tới vị trí mới |
+| `actors[].enterAt` | `0.4` — bật vào sau 0,4 s |
+| `pops` | `[{"content": "💾", "x": 0.5, "y": 0.4, "at": 0.6, "size": 140, "from": "top"}]` |
+| `particles` | `"dust"` / `"money"` / `"rain"` / `"sparks"` / `"confetti"` / `"snow"` |
+| `impacts` | `[0.8]` — rung khung tại 0,8 s |
+| `speedLines` | `true` |
+
+`cast` lấy từ `template/cast/presets.json` (biếm họa người thật) — xem `caricature-guide.md`.

@@ -4,7 +4,8 @@
   "scripts": {
     "studio": "remotion studio",
     "render": "remotion render Episode out/episode.mp4",
-    "still": "remotion still Episode out/still.png --frame=30"
+    "still": "remotion still Thumbnail out/thumbnail.png",
+    "cast": "remotion still CastSheet out/cast.png"
   },
   "dependencies": {
     "@remotion/cli": "4.0.543",
