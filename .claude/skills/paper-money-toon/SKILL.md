@@ -25,7 +25,7 @@ Làm theo `references/topic-and-packaging.md`:
 2. **Ngôn ngữ** (EN mặc định như đối thủ; VI, ES, PT, DE, JA, KO).
 3. **Thời lượng** như đối thủ: 12–15 phút hoặc 15–20 phút.
 4. **Tiêu đề**: 3 phương án theo công thức How/Why + tên lớn + yếu tố lạ.
-5. **Thumbnail**: 3 phương án theo `references/thumbnail-prompts.md` — viết prompt AI ảnh (tranh hoạt hình chi tiết, nhân vật mặt to cảm xúc cực đại, vật ẩn dụ phát sáng xanh, chừa 22% trên), rồi đặt chữ sans siêu đậm (số tiền đỏ có dấu âm + từ trắng) bằng `npm run still`.
+5. **Thumbnail**: **chỉ giao prompt, không render** — người dùng tự tạo ảnh. Viết 3 prompt dán sẵn (tiếng Anh) theo `references/thumbnail-prompts.md#giao-prompt`, mỗi prompt đã kèm chữ headline (số tiền đỏ có dấu âm + 0–2 từ trắng). Chỉ dùng Remotion đặt chữ nếu người dùng yêu cầu.
 Dùng `AskUserQuestion` (gộp 1–4 câu mỗi lần). Có thể hỏi 0.2 + 0.3 cùng lúc với 0.1.
 
 ### Bước 1 — Nghiên cứu & dàn ý

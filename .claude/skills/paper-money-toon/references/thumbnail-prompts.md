@@ -17,7 +17,19 @@ Phân tích từ 4 thumbnail thật (ảnh chụp kênh, tháng 11/2026):
 5. **Chữ bổ sung, không lặp tiêu đề**: tiêu đề nói "tại sao/thế nào", thumbnail nói "bao nhiêu tiền" + một móc chơi chữ ("ONE ZIPPER.").
 6. **Nền là bối cảnh thật của truyện**, ánh sáng ấm hoặc lửa, có độ sâu mờ (bokeh); tông tối để chữ và vật phát sáng nổi bật.
 
-## Quy trình tạo
+## Giao prompt (mặc định) {#giao-prompt}
+Người dùng **tự tạo ảnh**. Giao 3 phương án, mỗi phương án gồm:
+1. Ý tưởng 1 dòng (nhân vật + biểu cảm + vật ẩn dụ + chữ).
+2. **Prompt có chữ** — dán thẳng vào Nano Banana / GPT-Image / Ideogram (các công cụ viết chữ tốt), dùng khung "có chữ" bên dưới.
+3. **Prompt không chữ** — dự phòng cho Midjourney / công cụ viết chữ kém (tự thêm chữ bằng Canva/Photoshop), dùng khung "không chữ".
+Mỗi prompt là 1 khối code riêng để copy một chạm. Mô tả nhân vật lấy đúng dấu hiệu nhận diện từ cast (tóc, kính, áo, đồ cầm).
+
+Khung **có chữ** (thêm vào cuối khung prompt bên dưới, thay cho câu "No text…"):
+```
+TEXT: at the very top across the full width, one line of huge bold condensed sans-serif all-caps text (Anton / Impact style) with thick black outline and drop shadow: "{TỪ TRẮNG}" in white followed by "{-$SỐ TIỀN}" in bright red. Spell the text exactly. No other text, no logos, no watermark.
+```
+
+## Quy trình tạo (khi tự render)
 1. Viết **3 ý tưởng** theo bảng: (nhân vật + biểu cảm) × (vật ẩn dụ phát sáng) × (chữ: số tiền đỏ + 0–2 từ trắng).
 2. Tạo ảnh nền + nhân vật bằng AI ảnh (Nano Banana / Imagen / GPT-Image / Midjourney) với prompt mẫu bên dưới, **không yêu cầu AI viết chữ**, chừa trống 22% phía trên.
 3. Đặt chữ bằng Remotion: sửa `storyboard/<ep>.thumb.json` (chế độ `image`) → `npm run still` — chữ sắc nét, đúng màu, đúng phông.
